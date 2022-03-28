@@ -1,0 +1,82 @@
+// do while loop
+
+//Program  6.18
+
+void main() {
+  int num = 10;
+  do {
+    print(num);
+    num--;
+  } while (num >= 1);
+}
+
+//Program  6.19
+
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter first number: ');
+  String num1Str = stdin.readLineSync()!;
+  int num1 = int.parse(num1Str);
+
+  stdout.write('Enter second number: ');
+  String num2Str = stdin.readLineSync()!;
+  int num2 = int.parse(num2Str);
+  int a = 1;
+  int i = 1;
+  do {
+    a = num1 * a;
+    i = i + 1;
+  } while (i <= num2);
+  print(a);
+}
+
+
+//Program  6.20
+
+import 'dart:html';
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter first number: ');
+  String num1Str = stdin.readLineSync()!;
+  int num1 = int.parse(num1Str);
+  int a;
+
+  do {
+    a = num1 % 10;
+    num1 = num1 ~/ 10;
+    print(a);
+  } while (num != 0);
+  // print(a);
+  if (num == a) {
+    print('number is palindrome');
+  } else {
+    print('number is not palindrome');
+  }
+}
+
+//Program  6.21
+
+import 'dart:html';
+import 'dart:io';
+
+void main() {
+  int reminder, sum = 0, temp;
+  stdout.write("Enter the number here...\n");
+  String numberInStr = stdin.readLineSync()!;
+  int number = int.parse(numberInStr);
+  temp = number;
+  
+  do {
+    reminder = number % 10; 
+    sum = (sum * 10) + reminder;
+    number = number ~/ 10;
+  } while (number > 0);
+  if (sum == temp) {
+    print('Its A Palindrome number');
+  } else {
+    print('Its A Not Palindrome number');
+  }
+}
+
